@@ -18,10 +18,12 @@ spec:
         {{- toYaml .Values.calico | nindent 10 }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
-    namespace: kube-system
+    namespace: tigera
   syncPolicy:
     automated:
       prune: true
+    syncOptions:
+      - CreateNamespace={{ .Values.calico.createNamespace }}
     retry:
       limit: 1
       backoff:

@@ -21,6 +21,7 @@ appMesh:
 # Calico Values
 calico:
   enable: false
+  createNamespace: true
 
 # AWS CloudWatch Metrics Values
 awsCloudWatchMetrics:

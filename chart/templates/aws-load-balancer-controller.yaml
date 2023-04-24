@@ -23,7 +23,7 @@ spec:
         {{- toYaml .Values.awsLoadBalancerController | nindent 10 }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
-    namespace: kube-system
+    namespace: aws-load-balancer
   syncPolicy:
     automated:
       prune: true
